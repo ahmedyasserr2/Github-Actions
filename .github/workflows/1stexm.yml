@@ -3,12 +3,17 @@ name: Echo, List, and Read
 on: [push]
 
 jobs:
-  build:
+  build:  # Define a specific job name
     runs-on: ubuntu-latest
     steps:
-    - name: Echo a message
-      run: echo "This is the first step!"
-    - name: List files in the workspace
-      run: ls 
-    - name: Read the read.md file
-      run: cat read.md
+      - name: Checkout code
+        uses: actions/checkout@v4  # Fetches code from repository
+
+      - name: Echo a message
+        run: echo "This is the first step!"
+
+      - name: List files in the workspace
+        run: ls  # Lists all files in the current directory
+
+      - name: Read the read.md file
+        run: cat read.md  # Reads the contents of read.md
