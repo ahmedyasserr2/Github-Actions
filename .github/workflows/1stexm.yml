@@ -1,0 +1,14 @@
+name: Echo, List, and Read
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Echo a message
+      run: echo "This is the first step!"
+    - name: List files in the workspace
+      run: ls ${{ github.workspace }}
+    - name: Read the read.md file
+      run: cat read.md
