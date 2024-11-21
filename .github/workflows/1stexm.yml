@@ -6,12 +6,7 @@ jobs:
   build:  # Define a specific job name
     runs-on: ubuntu-latest
     steps:
-    - name: Echo a message
-      run: echo "This is the first step!"
-    - name: List files in the workspace
-      run: ls 
-    - name: Read the read.md file
-      run: cat README.md
+
     - name: Checkout code
       uses: actions/checkout@v4  # Fetches code from repository
 
