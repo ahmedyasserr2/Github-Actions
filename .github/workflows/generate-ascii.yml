@@ -1,0 +1,27 @@
+name: Generate ASCII Artwork
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Print Workflow Start Message
+        run: echo "Starting ASCII dragon generation workflow..."
+
+      - name: List Initial Files
+        run: ls
+
+      - name: Install cowsay
+        run: sudo apt-get update && sudo apt-get install -y cowsay
+
+      - name: Generate and Display ASCII Dragon
+        run: |
+          cowsay -f dragon "Here be dragons!" > dragon.txt
+          cat dragon.txt
+
+      - name: List Final Files
+        run: ls -l
