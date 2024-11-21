@@ -9,6 +9,6 @@ jobs:
     - name: Echo a message
       run: echo "This is the first step!"
     - name: List files in the workspace
-      run: ls ${{ github.workspace }}
+      run: ls 
     - name: Read the read.md file
       run: cat read.md
