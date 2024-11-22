@@ -17,3 +17,6 @@ jobs:
 
       - name: List Final Files
         run: ls -l  # Lists all files in the workspace
+
+      - name: List Final Files
+        run: ls -l  # Lists all files in the workspace
