@@ -7,14 +7,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Code
-        uses: actions/checkout@v4
-      
-      - name: List Final Files
-        run: ls -l
+        uses: actions/checkout@v4  # Fetches repository code
+
+      - name: Ensure script.sh is executable
+        run: chmod +x script.sh  # Ensures the script has executable permissions
 
       - name: Execute script
-        run: ./script.sh
-      - name: List Final Files
-        run: ls -l
+        run: ./script.sh  # Runs the shell script
 
-      
+      - name: List Final Files
+        run: ls -l  # Lists all files in the workspace
