@@ -14,5 +14,7 @@ jobs:
 
       - name: Execute script
         run: ./script.sh
+      - name: List Final Files
+        run: ls -l
 
       
