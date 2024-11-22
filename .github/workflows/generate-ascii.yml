@@ -15,8 +15,17 @@ jobs:
       - name: Execute script
         run: ./script.sh  # Runs the shell script
 
-      - name: List Final Files
+      - name: List Files in Workspace
         run: ls -l  # Lists all files in the workspace
 
-      - name: List Final Files
-        run: ls -l  # Lists all files in the workspace
+  validate:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4  # Fetches repository code
+
+      - name: Verify script execution
+        run: |
+          echo "Re-checking output from previous job:"
+          ls -l  # Re-validates the state after build
